@@ -10,10 +10,14 @@ export const TodoItemWrapper = styled(Animated.View)`
   height: 80px;
   margin: 10px;
   border-radius: 5px;
+  padding: 0px 20px;
+`;
+
+export const Title = styled.Text`
+  text-decoration: ${({ completed }) => completed && "line-through"};
 `;
 
 export const Logo = styled.Image`
-  margin: 0px 10px;
   margin-left: auto;
   height: 50px;
   width: 50px;

@@ -1,9 +1,10 @@
 import React from "react";
 import { Text } from "react-native";
 
+import CheckBox from "../../utils/CheckBox";
 import SwipeRow from "../../utils/SwipeRow";
 import truncateString from "../../utils/truncateString";
-import { TodoItemWrapper, Logo } from "./TodoItem.styled";
+import { TodoItemWrapper, Title, Logo } from "./TodoItem.styled";
 
 const TodoItem = ({ item }) => {
   return (
@@ -14,7 +15,10 @@ const TodoItem = ({ item }) => {
       onSwipe={() => console.log(`delete ${item.title}`)}
     >
       <TodoItemWrapper>
-        <Text>{truncateString(item.title, 20)}</Text>
+        <CheckBox completed={item.completed} />
+        <Title completed={item.completed}>
+          {truncateString(item.title, 25)}
+        </Title>
         <Logo
           source={{
             uri: "https://reactnative.dev/img/tiny_logo.png",
