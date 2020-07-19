@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { getTodos } from "../api/todos";
 
 const useTodos = () => {
-  const LIMIT = 20;
+  const LIMIT = 7;
   const [isLoading, setIsLoading] = useState(true);
   const [todos, setTodos] = useState([]);
   const [start, setStart] = useState(0);

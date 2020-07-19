@@ -1,8 +1,7 @@
 import styled from "styled-components/native";
 import { primaryColor } from "../../constant/style-constants";
-import Animated from "react-native-reanimated";
 
-export const TodoItemWrapper = styled(Animated.View)`
+export const TodoItemWrapper = styled.View`
   display: flex;
   align-items: center;
   flex-direction: row;

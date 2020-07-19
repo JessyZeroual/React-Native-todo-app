@@ -2,6 +2,7 @@ import React from "react";
 import TestRenderer, { act } from "react-test-renderer";
 import TodoItem from "../TodoItem";
 
+jest.mock("../../../utils/SwipeRow");
 jest.mock("../../../utils/truncateString");
 
 describe("TodoItem", () => {
