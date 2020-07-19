@@ -6,6 +6,10 @@ exports[`TodoList When TodoList is mounted renders correctly 1`] = `
     Array [
       Object {
         "backgroundColor": "#ebebef",
+        "paddingBottom": 0,
+        "paddingLeft": 10,
+        "paddingRight": 10,
+        "paddingTop": 0,
         "width": "100%",
       },
     ]
@@ -55,15 +59,21 @@ exports[`TodoList When TodoList is mounted renders correctly 1`] = `
       <View
         onLayout={[Function]}
         style={null}
-      />
+      >
+        View
+      </View>
       <View
         onLayout={[Function]}
         style={null}
-      />
+      >
+        View
+      </View>
       <View
         onLayout={[Function]}
         style={null}
-      />
+      >
+        View
+      </View>
     </View>
   </RCTScrollView>
 </View>

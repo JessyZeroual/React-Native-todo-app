@@ -8,7 +8,7 @@ import useTodos from "./helpers/useTodos";
 import TodoList from "./components/TodoList/TodoList";
 
 const App = () => {
-  const { isLoading, todos, fetchTodos, _deleteTodo } = useTodos();
+  const { isLoading, todos, fetchTodos, _deleteTodo, _updateTodo } = useTodos();
 
   return (
     <Container>
@@ -21,6 +21,7 @@ const App = () => {
           todos={todos}
           fetchTodos={fetchTodos}
           _deleteTodo={_deleteTodo}
+          _updateTodo={_updateTodo}
         />
       )}
       <StatusBar style="auto" />
