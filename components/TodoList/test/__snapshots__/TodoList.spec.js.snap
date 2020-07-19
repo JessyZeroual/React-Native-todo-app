@@ -6,6 +6,7 @@ exports[`TodoList When TodoList is mounted renders correctly 1`] = `
     Array [
       Object {
         "backgroundColor": "#fff",
+        "width": "100%",
       },
     ]
   }
@@ -31,7 +32,6 @@ exports[`TodoList When TodoList is mounted renders correctly 1`] = `
     getItem={[Function]}
     getItemCount={[Function]}
     horizontal={false}
-    id="todoList"
     initialNumToRender={10}
     keyExtractor={[Function]}
     maxToRenderPerBatch={10}
@@ -55,39 +55,15 @@ exports[`TodoList When TodoList is mounted renders correctly 1`] = `
       <View
         onLayout={[Function]}
         style={null}
-      >
-        <Text
-          style={
-            Object {
-              "height": 100,
-            }
-          }
-        />
-      </View>
+      />
       <View
         onLayout={[Function]}
         style={null}
-      >
-        <Text
-          style={
-            Object {
-              "height": 100,
-            }
-          }
-        />
-      </View>
+      />
       <View
         onLayout={[Function]}
         style={null}
-      >
-        <Text
-          style={
-            Object {
-              "height": 100,
-            }
-          }
-        />
-      </View>
+      />
     </View>
   </RCTScrollView>
 </View>

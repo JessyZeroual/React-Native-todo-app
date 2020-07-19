@@ -4,6 +4,7 @@ import { FlatList } from "react-native";
 
 import TodoList from "../TodoList";
 
+jest.mock("../../TodoItem/TodoItem");
 const mockDataTodos = [
   {
     id: "id-1",
@@ -67,7 +68,7 @@ describe("TodoList", () => {
           />
         );
       });
-      
+
       expect(mockFetchTodos).toHaveBeenCalledTimes(1);
       expect(mockFetchTodos).toHaveBeenCalledWith({ needMoreTodos: true });
       expect(renderer.root.findByType(FlatList).props.data.length).toEqual(6);
