@@ -2,19 +2,26 @@ import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { ActivityIndicator } from "react-native";
 import { Container } from "./App.styled";
+import { ViewCenter } from "./style/common.styled";
 
 import useTodos from "./helpers/useTodos";
 import TodoList from "./components/TodoList/TodoList";
 
 const App = () => {
-  const { isLoading, todos, fetchTodos } = useTodos();
+  const { isLoading, todos, fetchTodos, _deleteTodo } = useTodos();
 
   return (
     <Container>
       {isLoading ? (
-        <ActivityIndicator size="large" />
+        <ViewCenter>
+          <ActivityIndicator size="large" />
+        </ViewCenter>
       ) : (
-        <TodoList todos={todos} fetchTodos={fetchTodos} />
+        <TodoList
+          todos={todos}
+          fetchTodos={fetchTodos}
+          _deleteTodo={_deleteTodo}
+        />
       )}
       <StatusBar style="auto" />
     </Container>

@@ -1,10 +1,9 @@
-import React from 'react';
-import { View } from 'react-native';
+import React from "react";
 import {
   PanGestureHandler,
   State as GestureState,
-} from 'react-native-gesture-handler';
-import Animated from 'react-native-reanimated';
+} from "react-native-gesture-handler";
+import Animated from "react-native-reanimated";
 const {
   event,
   cond,
@@ -18,13 +17,15 @@ const {
   startClock,
   stopClock,
   spring,
-  greaterThan,
   lessThan,
   call,
   Clock,
 } = Animated;
 
 class SwipeRow extends React.Component {
+  state = {
+    lasItem: null,
+  };
   clock = new Clock();
   gestureState = new Value(GestureState.UNDETERMINED);
   animState = {
@@ -74,8 +75,13 @@ class SwipeRow extends React.Component {
             // If swipe distance exceeds threshold, delete item
             cond(
               lessThan(translationX, this.props.swipeThreshold),
-              call([this.animState.position], () =>
-                this.props.onSwipe(this.props.item)
+              call(
+                [this.animState.position],
+                () =>
+                  this.props.item !== this.state.lastItem &&
+                  this.props
+                    .onSwipe()
+                    .then(this.setState({ lastItem: this.props.item }))
               )
             ),
           ]),
@@ -89,12 +95,14 @@ class SwipeRow extends React.Component {
       <PanGestureHandler
         minDeltaX={10}
         onGestureEvent={this.onPanEvent}
-        onHandlerStateChange={this.onHandlerStateChange}>
+        onHandlerStateChange={this.onHandlerStateChange}
+      >
         <Animated.View
           style={{
             flex: 1,
             transform: [{ translateX: this.animState.position }],
-          }}>
+          }}
+        >
           <Animated.Code>
             {() =>
               block([

@@ -1,18 +1,17 @@
 import React from "react";
-import { Text } from "react-native";
 
 import CheckBox from "../../utils/CheckBox";
 import SwipeRow from "../../utils/SwipeRow";
 import truncateString from "../../utils/truncateString";
 import { TodoItemWrapper, Title, Logo } from "./TodoItem.styled";
 
-const TodoItem = ({ item }) => {
+const TodoItem = ({ item, _deleteTodo }) => {
   return (
     <SwipeRow
-      key={item.key}
+      key={item.id}
       item={item}
       swipeThreshold={-150}
-      onSwipe={() => console.log(`delete ${item.title}`)}
+      onSwipe={() => _deleteTodo(item.id)}
     >
       <TodoItemWrapper>
         <CheckBox completed={item.completed} />
