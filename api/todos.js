@@ -12,3 +12,17 @@ export const deleteTodo = (id) => {
     method: "DELETE",
   });
 };
+
+export const updateTodo = (id, completed) => {
+  return fetch(`${BASE_URL}/todos/${id}`, {
+    method: "PUT",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      id,
+      completed,
+    }),
+  });
+};

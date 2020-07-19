@@ -4,7 +4,8 @@ import { FlatList } from "react-native";
 
 import TodoList from "../TodoList";
 
-jest.mock("../../TodoItem/TodoItem");
+jest.mock("../../TodoItem/TodoItem", () => () => "View");
+
 const mockDataTodos = [
   {
     id: "id-1",

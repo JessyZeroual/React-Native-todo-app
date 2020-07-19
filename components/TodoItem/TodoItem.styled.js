@@ -14,6 +14,7 @@ export const TodoItemWrapper = styled.View`
 `;
 
 export const Title = styled.Text`
+  font-size: 16px;
   text-decoration: ${({ completed }) => completed && "line-through"};
 `;
 
