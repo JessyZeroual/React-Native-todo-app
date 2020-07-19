@@ -1,12 +1,12 @@
 import React from "react";
 import TestRenderer, { act } from "react-test-renderer";
+import { TodosContextProvider } from "../../../context/TodosContext";
 import { FlatList } from "react-native";
-
 import TodoList from "../TodoList";
 
 jest.mock("../../TodoItem/TodoItem", () => () => "View");
 
-const mockDataTodos = [
+const todos = [
   {
     id: "id-1",
     name: "Todo-1",
@@ -21,8 +21,8 @@ const mockDataTodos = [
   },
 ];
 
-const mockFetchTodos = jest.fn(() =>
-  mockDataTodos.concat([
+const fetchTodos = jest.fn(() =>
+  todos.concat([
     {
       id: "id-4",
       name: "Todo-4",
@@ -44,7 +44,14 @@ describe("TodoList", () => {
   beforeEach(() => {
     act(() => {
       renderer = TestRenderer.create(
-        <TodoList todos={mockDataTodos} fetchTodos={mockFetchTodos} />
+        <TodosContextProvider
+          value={{
+            state: { todos },
+            dispatch: { fetchTodos },
+          }}
+        >
+          <TodoList />
+        </TodosContextProvider>
       );
     });
   });
@@ -63,15 +70,21 @@ describe("TodoList", () => {
     it("Fetch more todos", () => {
       act(() => {
         renderer.update(
-          <TodoList
-            todos={renderer.root.findByType(FlatList).props.onEndReached()}
-            fetchTodos={mockFetchTodos}
-          />
+          <TodosContextProvider
+            value={{
+              state: {
+                todos: renderer.root.findByType(FlatList).props.onEndReached(),
+              },
+              dispatch: { fetchTodos },
+            }}
+          >
+            <TodoList />
+          </TodosContextProvider>
         );
       });
 
-      expect(mockFetchTodos).toHaveBeenCalledTimes(1);
-      expect(mockFetchTodos).toHaveBeenCalledWith({ needMoreTodos: true });
+      expect(fetchTodos).toHaveBeenCalledTimes(1);
+      expect(fetchTodos).toHaveBeenCalledWith({ needMoreTodos: true });
       expect(renderer.root.findByType(FlatList).props.data.length).toEqual(6);
     });
   });

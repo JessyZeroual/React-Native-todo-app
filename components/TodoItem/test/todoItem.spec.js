@@ -1,9 +1,13 @@
 import React from "react";
 import TestRenderer, { act } from "react-test-renderer";
+import { TodosContextProvider } from "../../../context/TodosContext";
 import TodoItem from "../TodoItem";
 
 jest.mock("../../../utils/SwipeRow");
 jest.mock("../../../utils/truncateString");
+
+const _updateTodo = jest.fn();
+const _deleteTodo = jest.fn();
 
 describe("TodoItem", () => {
   let renderer;
@@ -15,7 +19,15 @@ describe("TodoItem", () => {
 
   beforeEach(() => {
     act(() => {
-      renderer = TestRenderer.create(<TodoItem item={mockDataItem} />);
+      renderer = TestRenderer.create(
+        <TodosContextProvider
+          value={{
+            dispatch: { _updateTodo, _deleteTodo },
+          }}
+        >
+          <TodoItem item={mockDataItem} />
+        </TodosContextProvider>
+      );
     });
   });
 

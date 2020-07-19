@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 
+import TodosContext from "../../context/TodosContext";
 import CheckBox from "../../utils/CheckBox";
 import SwipeRow from "../../utils/SwipeRow";
 import truncateString from "../../utils/truncateString";
 import { TodoItemWrapper, Title, Logo } from "./TodoItem.styled";
 
-const TodoItem = ({ item, _deleteTodo, _updateTodo }) => {
+const TodoItem = ({ item }) => {
+  const todosContext = useContext(TodosContext);
+  const { _updateTodo, _deleteTodo } = todosContext.dispatch;
+
   const onPressCheckBox = (completed) => {
     _updateTodo(item.id, completed);
   };

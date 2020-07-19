@@ -1,6 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { ActivityIndicator } from "react-native";
+import { TodosContextProvider } from "./context/TodosContext";
 import { Container } from "./App.styled";
 import { ViewCenter } from "./style/common.styled";
 
@@ -17,12 +18,14 @@ const App = () => {
           <ActivityIndicator size="large" />
         </ViewCenter>
       ) : (
-        <TodoList
-          todos={todos}
-          fetchTodos={fetchTodos}
-          _deleteTodo={_deleteTodo}
-          _updateTodo={_updateTodo}
-        />
+        <TodosContextProvider
+          value={{
+            state: { isLoading, todos },
+            dispatch: { fetchTodos, _deleteTodo, _updateTodo },
+          }}
+        >
+          <TodoList />
+        </TodosContextProvider>
       )}
       <StatusBar style="auto" />
     </Container>

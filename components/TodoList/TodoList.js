@@ -1,20 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FlatList } from "react-native";
+import TodosContext from "../../context/TodosContext";
 import TodoItem from "../TodoItem/TodoItem";
 import { TodoListWrapper } from "./TodoList.styled";
 
-const TodoList = ({ todos, fetchTodos, _deleteTodo, _updateTodo }) => {
+const TodoList = () => {
+  const todosContext = useContext(TodosContext);
+  const { todos } = todosContext.state;
+  const { fetchTodos } = todosContext.dispatch;
+
   return (
     <TodoListWrapper>
       <FlatList
         data={todos}
-        renderItem={({ item }) => (
-          <TodoItem
-            item={item}
-            _deleteTodo={_deleteTodo}
-            _updateTodo={_updateTodo}
-          />
-        )}
+        renderItem={({ item }) => <TodoItem item={item} />}
         keyExtractor={(item) => item.id.toString()}
         onEndReachedThreshold={0.5}
         onEndReached={() => fetchTodos({ needMoreTodos: true })}
