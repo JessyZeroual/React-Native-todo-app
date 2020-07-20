@@ -17,7 +17,7 @@ export const Title = styled.Text`
   text-decoration: ${({ completed }) => completed && "line-through"};
 `;
 
-export const Logo = styled.Image`
+export const Image = styled.Image`
   margin-left: auto;
   height: 50px;
   width: 50px;

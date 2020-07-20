@@ -36,6 +36,8 @@ const NavigationBar = () => {
             title: "Todo-details",
             headerStyle: {
               backgroundColor: primaryColor,
+              shadowColor: "transparent",
+              elevation: 0,
             },
             headerTintColor: "#fff",
             headerTitleStyle: {

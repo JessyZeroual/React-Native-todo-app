@@ -5,7 +5,7 @@ import TodosContext from "../../context/TodosContext";
 import CheckBox from "../../utils/CheckBox/CheckBox";
 import SwipeRow from "../../utils/SwipeRow";
 import truncateString from "../../utils/truncateString";
-import { TodoItemWrapper, Title, Logo } from "./TodoItem.styled";
+import { TodoItemWrapper, Title, Image } from "./TodoItem.styled";
 
 const TodoItem = ({ item }) => {
   const todosContext = useContext(TodosContext);
@@ -38,7 +38,7 @@ const TodoItem = ({ item }) => {
         <Title completed={item.completed}>
           {truncateString(item.title, 20)}
         </Title>
-        <Logo
+        <Image
           source={{
             uri: "https://reactnative.dev/img/tiny_logo.png",
           }}
