@@ -8,7 +8,7 @@ export const TodoItemWrapper = styled.View`
   background: #fff;
   height: 70px;
   border-bottom-color: ${secondaryColor};
-  border-bottom-width: 1.5;
+  border-bottom-width: 1.5px;
   padding: 0px 20px;
 `;
 

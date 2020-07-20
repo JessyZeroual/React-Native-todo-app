@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 import { LayoutAnimation } from "react-native";
-import { getTodos, deleteTodo, updateTodo } from "../api/todos";
+import { getTodos, deleteTodo, updateTodo, postTodo } from "../api/todos";
 
 const useTodos = () => {
   const LIMIT = 8;
@@ -32,7 +32,7 @@ const useTodos = () => {
 
   const _deleteTodo = async (id) => {
     const response = await deleteTodo(id);
-    if (response.ok) {
+    if (response.status === 200) {
       setTodos(todos.filter((todo) => todo.id !== id));
       LayoutAnimation.configureNext(LayoutAnimation.Presets.spring);
     }
@@ -55,7 +55,14 @@ const useTodos = () => {
     }
   };
 
-  return { isLoading, todos, fetchTodos, _deleteTodo, _updateTodo };
+  const _postTodo = async (title) => {
+    if (title.trim().length < 1) return;
+    const response = await postTodo(title);
+    const data = await response.json();
+    setTodos([data, ...todos]);
+  };
+
+  return { isLoading, todos, fetchTodos, _deleteTodo, _updateTodo, _postTodo };
 };
 
 export default useTodos;

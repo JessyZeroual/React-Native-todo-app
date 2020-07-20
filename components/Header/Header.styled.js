@@ -3,7 +3,7 @@ import { primaryColor, secondaryColor } from "../../constant/style-constants";
 
 export const Container = styled.View`
   border-bottom-color: ${secondaryColor};
-  border-bottom-width: 1.5;
+  border-bottom-width: 0.5px;
 `;
 
 export const HeaderWrapper = styled.View`
