@@ -11,7 +11,7 @@ const TodoItem = ({ item }) => {
   const { _updateTodo, _deleteTodo } = todosContext.dispatch;
 
   const onPressCheckBox = (completed) => {
-    _updateTodo(item.id, completed);
+    _updateTodo(item.id, item.userId, item.title, completed);
   };
 
   return (
