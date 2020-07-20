@@ -7,7 +7,7 @@ const CheckBox = ({ completed, onPressCheckBox }) => {
     <Icon.Button
       name={completed ? "check-box" : "check-box-outline-blank"}
       backgroundColor="transparent"
-      color={completed ? secondaryColor : primaryColor}
+      color={completed ? primaryColor : secondaryColor}
       underlayColor="transparent"
       size={25}
       iconStyle={{ marginLeft: -10, marginRight: 0 }}

@@ -1,4 +1,4 @@
-const primaryColor = "#ebebef";
-const secondaryColor = "#4285F4";
+const primaryColor = "#4285F4";
+const secondaryColor = "#ebebef";
 
 export { primaryColor, secondaryColor };
