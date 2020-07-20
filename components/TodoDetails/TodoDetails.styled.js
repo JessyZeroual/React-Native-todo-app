@@ -9,10 +9,24 @@ export const TodoDetailsWrapper = styled.View`
   border-bottom-color: ${secondaryColor};
   border-bottom-width: 1.5px;
 `;
+export const WrapperHeader = styled.View`
+  width: 100%;
+  background: ${primaryColor};
+`;
+
+export const Header = styled.View`
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  background: white;
+  border-top-right-radius: 40px;
+  padding: 0px 20px;
+`;
 
 export const Title = styled.Text`
-  padding: 20px;
-  font-size: 20px;
+  padding: 15px;
+  font-size: 25px;
 `;
 export const Label = styled.Text`
   font-size: 15px;
@@ -23,7 +37,7 @@ export const ImageWrapper = styled.View`
   align-items: center;
   justify-content: center;
   border-bottom-left-radius: 100px;
-  border-bottom-right-radius: 100px;
+
   padding: 20px;
   width: 100%;
 
@@ -35,7 +49,7 @@ export const CardWrapper = styled.View`
   padding: 0px 20px;
 `;
 
-export const CardMedia = styled.View`
+export const CardMedia = styled.TouchableOpacity`
   width: 60px;
   height: 60px;
   display: flex;
@@ -46,7 +60,7 @@ export const CardMedia = styled.View`
   border-color: ${secondaryColor};
 `;
 
-export const Card = styled.View`
+export const Card = styled.TouchableOpacity`
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -72,4 +86,22 @@ export const Avatar = styled.Image`
   border-radius: 40px;
   height: 50px;
   width: 50px;
+`;
+
+export const SettingsWrapper = styled.View`
+  display: flex;
+  align-items: center;
+  background: red;
+`;
+
+export const SettingsList = styled.View`
+  display: flex;
+  width: 80%;
+  background: green;
+`;
+
+export const SettingsItem = styled.TouchableOpacity`
+  display: flex;
+  align-items: center;
+  background: red;
 `;
