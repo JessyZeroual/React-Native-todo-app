@@ -1,4 +1,5 @@
-const BASE_URL = "https://my-json-server.typicode.com/JessyZeroual/json-server";
+import { IP_ADRESS } from "../constant/config";
+const BASE_URL = `http://${IP_ADRESS}:3000`;
 
 export const getTodos = (start, LIMIT) => {
   return fetch(`${BASE_URL}/todos?_start=${start}&_limit=${LIMIT}`)
@@ -13,7 +14,7 @@ export const deleteTodo = (id) => {
   });
 };
 
-export const updateTodo = (id, completed) => {
+export const updateTodo = (id, completed, userId, title) => {
   return fetch(`${BASE_URL}/todos/${id}`, {
     method: "PUT",
     headers: {
@@ -23,6 +24,8 @@ export const updateTodo = (id, completed) => {
     body: JSON.stringify({
       id,
       completed,
+      userId,
+      title,
     }),
   });
 };

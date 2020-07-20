@@ -38,20 +38,16 @@ const useTodos = () => {
     }
   };
 
-  const _updateTodo = async (id, completed) => {
-    const newTodos = todos.map((todo) => {
-      if (todo.id === id) todo.completed = completed;
-      return todo;
-    });
-    setTodos(newTodos);
+  const _updateTodo = async (id, userId, title, completed) => {
+    const response = await updateTodo(id, completed, userId, title);
+    const data = await response.json();
 
-    const response = await updateTodo(id, completed);
-    if (!response.ok) {
-      const rollBackTodos = todos.map((todo) => {
-        if (todo.id === id) todo.completed = !completed;
+    if (response.ok) {
+      const newTodos = todos.map((todo) => {
+        if (todo.id === data.id) todo.completed = data.completed;
         return todo;
       });
-      setTodos(rollBackTodos);
+      setTodos(newTodos);
     }
   };
 
