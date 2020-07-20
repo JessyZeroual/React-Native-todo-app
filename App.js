@@ -7,6 +7,7 @@ import { ViewCenter } from "./style/common.styled";
 
 import useTodos from "./helpers/useTodos";
 import TodoList from "./components/TodoList/TodoList";
+import Header from "./components/Header/Header";
 
 const App = () => {
   const { isLoading, todos, fetchTodos, _deleteTodo, _updateTodo } = useTodos();
@@ -24,6 +25,7 @@ const App = () => {
             dispatch: { fetchTodos, _deleteTodo, _updateTodo },
           }}
         >
+          <Header />
           <TodoList />
         </TodosContextProvider>
       )}

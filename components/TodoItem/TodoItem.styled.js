@@ -1,15 +1,14 @@
 import styled from "styled-components/native";
-import { primaryColor } from "../../constant/style-constants";
+import { secondaryColor } from "../../constant/style-constants";
 
 export const TodoItemWrapper = styled.View`
-  width: 100%;
   display: flex;
   align-items: center;
   flex-direction: row;
   background: #fff;
-  height: 80px;
-  border-radius: 5px;
-  margin: 5px 0px;
+  height: 70px;
+  border-bottom-color: ${secondaryColor};
+  border-bottom-width: 1.5;
   padding: 0px 20px;
 `;
 
