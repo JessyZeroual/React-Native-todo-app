@@ -1,21 +1,23 @@
-import React, { useState } from "react";
-
+import React, { useState, useContext } from "react";
+import TodosContext from "../../context/TodosContext";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import { Form, Input, ButtonSubmit } from "./InputCreateItem.styled";
 
 const InputCreateItem = () => {
   const [text, setText] = useState("");
+  const todosContext = useContext(TodosContext);
+  const { _postTodo } = todosContext.dispatch;
   return (
     <Form style={shadow}>
       <Input
-        onChangeText={(text) => setText({ text })}
+        onChangeText={(text) => setText(text)}
         placeholder="Add item"
         placeholderTextColor="grey"
         value={text}
-        onSubmitEditing={() => console.log("POST Todo")}
+        onSubmitEditing={() => _postTodo(text).then(setText(""))}
       />
 
-      <ButtonSubmit onPress={() => console.log("POST Todo")}>
+      <ButtonSubmit onPress={() => _postTodo(text).then(setText(""))}>
         <Icon name="add" color="#fff" size={20}></Icon>
       </ButtonSubmit>
     </Form>
@@ -28,9 +30,9 @@ const shadow = {
     width: 0,
     height: 1,
   },
-  shadowOpacity: 0.20,
+  shadowOpacity: 0.2,
   shadowRadius: 1.41,
-  
+
   elevation: 2,
 };
 

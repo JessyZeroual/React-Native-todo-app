@@ -10,7 +10,14 @@ import TodoList from "./components/TodoList/TodoList";
 import Header from "./components/Header/Header";
 
 const App = () => {
-  const { isLoading, todos, fetchTodos, _deleteTodo, _updateTodo } = useTodos();
+  const {
+    isLoading,
+    todos,
+    fetchTodos,
+    _deleteTodo,
+    _updateTodo,
+    _postTodo,
+  } = useTodos();
 
   return (
     <Container>
@@ -22,7 +29,7 @@ const App = () => {
         <TodosContextProvider
           value={{
             state: { isLoading, todos },
-            dispatch: { fetchTodos, _deleteTodo, _updateTodo },
+            dispatch: { fetchTodos, _deleteTodo, _updateTodo, _postTodo },
           }}
         >
           <Header />

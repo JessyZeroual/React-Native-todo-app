@@ -26,3 +26,18 @@ export const updateTodo = (id, completed) => {
     }),
   });
 };
+
+export const postTodo = (title) => {
+  return fetch(`${BASE_URL}/todos`, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      userId: 1,
+      title,
+      completed: false,
+    }),
+  });
+};
