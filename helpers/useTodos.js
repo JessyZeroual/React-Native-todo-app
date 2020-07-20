@@ -55,7 +55,7 @@ const useTodos = () => {
     if (title.trim().length < 1) return;
     const response = await postTodo(title);
     const data = await response.json();
-    setTodos([data, ...todos]);
+    setTodos([...todos, data]);
   };
 
   return { isLoading, todos, fetchTodos, _deleteTodo, _updateTodo, _postTodo };

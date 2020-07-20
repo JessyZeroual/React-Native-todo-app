@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
 import { secondaryColor } from "../../constant/style-constants";
 
-export const TodoItemWrapper = styled.View`
+export const TodoItemWrapper = styled.TouchableOpacity`
   display: flex;
   align-items: center;
   flex-direction: row;

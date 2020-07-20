@@ -1,26 +1,35 @@
 import React, { useState, useContext } from "react";
 import TodosContext from "../../context/TodosContext";
 import Icon from "react-native-vector-icons/MaterialIcons";
-import { Form, Input, ButtonSubmit } from "./InputCreateItem.styled";
+import {
+  InputCreateItemWrapper,
+  Shape,
+  Form,
+  Input,
+  ButtonSubmit,
+} from "./InputCreateItem.styled";
 
 const InputCreateItem = () => {
   const [text, setText] = useState("");
   const todosContext = useContext(TodosContext);
   const { _postTodo } = todosContext.dispatch;
   return (
-    <Form style={shadow}>
-      <Input
-        onChangeText={(text) => setText(text)}
-        placeholder="Add item"
-        placeholderTextColor="grey"
-        value={text}
-        onSubmitEditing={() => _postTodo(text).then(setText(""))}
-      />
+    <InputCreateItemWrapper>
+      <Shape />
+      <Form style={shadow}>
+        <Input
+          onChangeText={(text) => setText(text)}
+          placeholder="Add item"
+          placeholderTextColor="grey"
+          value={text}
+          onSubmitEditing={() => _postTodo(text).then(setText(""))}
+        />
 
-      <ButtonSubmit onPress={() => _postTodo(text).then(setText(""))}>
-        <Icon name="add" color="#fff" size={20}></Icon>
-      </ButtonSubmit>
-    </Form>
+        <ButtonSubmit onPress={() => _postTodo(text).then(setText(""))}>
+          <Icon name="add" color="#fff" size={20}></Icon>
+        </ButtonSubmit>
+      </Form>
+    </InputCreateItemWrapper>
   );
 };
 
