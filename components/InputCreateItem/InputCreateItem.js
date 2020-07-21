@@ -1,12 +1,13 @@
 import React, { useState, useContext } from "react";
-import TodosContext from "../../context/TodosContext";
 import Icon from "react-native-vector-icons/MaterialIcons";
+import TodosContext from "../../context/TodosContext";
+import { shadow } from "../../constant/style-constants";
 import {
-  InputCreateItemWrapper,
-  Shape,
-  Form,
-  Input,
-  ButtonSubmit,
+  StyledInputCreateItemWrapper,
+  StyledShape,
+  StyledForm,
+  StyledInput,
+  StyledButtonSubmit,
 } from "./InputCreateItem.styled";
 
 const InputCreateItem = () => {
@@ -14,10 +15,10 @@ const InputCreateItem = () => {
   const todosContext = useContext(TodosContext);
   const { _postTodo } = todosContext.dispatch;
   return (
-    <InputCreateItemWrapper>
-      <Shape />
-      <Form style={shadow}>
-        <Input
+    <StyledInputCreateItemWrapper>
+      <StyledShape />
+      <StyledForm style={shadow}>
+        <StyledInput
           onChangeText={(text) => setText(text)}
           placeholder="Add item"
           placeholderTextColor="grey"
@@ -25,24 +26,12 @@ const InputCreateItem = () => {
           onSubmitEditing={() => _postTodo(text).then(setText(""))}
         />
 
-        <ButtonSubmit onPress={() => _postTodo(text).then(setText(""))}>
+        <StyledButtonSubmit onPress={() => _postTodo(text).then(setText(""))}>
           <Icon name="add" color="#fff" size={20}></Icon>
-        </ButtonSubmit>
-      </Form>
-    </InputCreateItemWrapper>
+        </StyledButtonSubmit>
+      </StyledForm>
+    </StyledInputCreateItemWrapper>
   );
-};
-
-const shadow = {
-  shadowColor: "#000",
-  shadowOffset: {
-    width: 0,
-    height: 1,
-  },
-  shadowOpacity: 0.2,
-  shadowRadius: 1.41,
-
-  elevation: 2,
 };
 
 export default InputCreateItem;

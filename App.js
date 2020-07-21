@@ -3,8 +3,6 @@ import React from "react";
 
 import { TodosContextProvider } from "./context/TodosContext";
 import useTodos from "./helpers/useTodos";
-
-import { Container } from "./components/Home/Home.styled";
 import NavigationBar from "./components/NavigationBar/NavigationBar";
 
 const App = () => {
@@ -19,7 +17,7 @@ const App = () => {
   } = useTodos();
 
   return (
-    <Container>
+    <>
       <TodosContextProvider
         value={{
           state: { isLoading, todos },
@@ -35,7 +33,7 @@ const App = () => {
         <NavigationBar />
       </TodosContextProvider>
       <StatusBar style="auto" />
-    </Container>
+    </>
   );
 };
 

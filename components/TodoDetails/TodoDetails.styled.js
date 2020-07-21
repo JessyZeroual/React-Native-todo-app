@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
 import { primaryColor, secondaryColor } from "../../constant/style-constants";
 
-export const TodoDetailsWrapper = styled.View`
+export const StyledTodoDetailsWrapper = styled.View`
   display: flex;
   align-items: center;
   height: 100%;
@@ -9,12 +9,12 @@ export const TodoDetailsWrapper = styled.View`
   border-bottom-color: ${secondaryColor};
   border-bottom-width: 1.5px;
 `;
-export const WrapperHeader = styled.View`
+export const StyledWrapperHeader = styled.View`
   width: 100%;
   background: ${primaryColor};
 `;
 
-export const Header = styled.View`
+export const StyledHeader = styled.View`
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -24,15 +24,15 @@ export const Header = styled.View`
   padding: 0px 20px;
 `;
 
-export const Title = styled.Text`
+export const StyledTitle = styled.Text`
   padding: 15px;
   font-size: 25px;
 `;
-export const Label = styled.Text`
+export const StyledLabel = styled.Text`
   font-size: 15px;
 `;
 
-export const ImageWrapper = styled.View`
+export const StyledImageWrapper = styled.View`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,12 +44,12 @@ export const ImageWrapper = styled.View`
   background: ${primaryColor};
 `;
 
-export const CardWrapper = styled.View`
+export const StyledCardWrapper = styled.View`
   width: 100%;
   padding: 0px 20px;
 `;
 
-export const CardMedia = styled.View`
+export const StyledCardMedia = styled.View`
   width: 60px;
   height: 60px;
   display: flex;
@@ -60,7 +60,7 @@ export const CardMedia = styled.View`
   border-color: ${secondaryColor};
 `;
 
-export const Card = styled.TouchableOpacity`
+export const StyledCard = styled.TouchableOpacity`
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -71,37 +71,19 @@ export const Card = styled.TouchableOpacity`
   width: 100%;
 `;
 
-export const CardTitle = styled.Text`
+export const StyledCardTitle = styled.Text`
   padding: 20px;
   font-size: 20px;
 `;
 
-export const Image = styled.Image`
+export const StyledImage = styled.Image`
   border-radius: 40px;
   height: 200px;
   width: 200px;
 `;
 
-export const Avatar = styled.Image`
+export const StyledAvatar = styled.Image`
   border-radius: 40px;
   height: 50px;
   width: 50px;
-`;
-
-export const SettingsWrapper = styled.View`
-  display: flex;
-  align-items: center;
-  background: red;
-`;
-
-export const SettingsList = styled.View`
-  display: flex;
-  width: 80%;
-  background: green;
-`;
-
-export const SettingsItem = styled.TouchableOpacity`
-  display: flex;
-  align-items: center;
-  background: red;
 `;

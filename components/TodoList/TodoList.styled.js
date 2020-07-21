@@ -1,6 +1,6 @@
 import styled from "styled-components/native";
 
-export const TodoListWrapper = styled.View`
+export const StyledTodoListWrapper = styled.View`
   background: #fff;
   width: 100%;
 `;

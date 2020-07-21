@@ -2,11 +2,14 @@ import React from "react";
 import * as ImagePicker from "expo-image-picker";
 import Icon from "react-native-vector-icons/AntDesign";
 
-import { primaryColor } from "../../constant/style-constants";
-import { CardMedia, CardTitle, Card } from "./TodoDetails.styled";
+import { primaryColor, shadow } from "../../constant/style-constants";
+import {
+  StyledCardMedia,
+  StyledCardTitle,
+  StyledCard,
+} from "./TodoDetails.styled";
 
 const TodoDetailsSettings = ({ item, addImage }) => {
-
   let openImagePickerAsync = async () => {
     let permissionResult = await ImagePicker.requestCameraRollPermissionsAsync();
 
@@ -23,25 +26,13 @@ const TodoDetailsSettings = ({ item, addImage }) => {
   };
 
   return (
-    <Card onPress={openImagePickerAsync} style={shadow}>
-      <CardMedia>
+    <StyledCard onPress={openImagePickerAsync} style={shadow}>
+      <StyledCardMedia>
         <Icon name="upload" color={primaryColor} size={25}></Icon>
-      </CardMedia>
-      <CardTitle>Edit image</CardTitle>
-    </Card>
+      </StyledCardMedia>
+      <StyledCardTitle>Edit image</StyledCardTitle>
+    </StyledCard>
   );
-};
-
-const shadow = {
-  shadowColor: "#000",
-  shadowOffset: {
-    width: 0,
-    height: 1,
-  },
-  shadowOpacity: 0.22,
-  shadowRadius: 2.22,
-
-  elevation: 3,
 };
 
 export default TodoDetailsSettings;

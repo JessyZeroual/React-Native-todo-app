@@ -2,15 +2,15 @@
   "todos": [
     {
       "id": 1,
-      "completed": true,
+      "completed": false,
       "userId": 1,
       "title": "Item-1"
     },
     {
+      "id": 2,
+      "completed": true,
       "userId": 1,
-      "title": "Item-6",
-      "completed": false,
-      "id": 2
+      "title": "Item-6"
     }
   ]
 }

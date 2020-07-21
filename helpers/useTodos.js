@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-
 import { LayoutAnimation } from "react-native";
 import { getTodos, deleteTodo, updateTodo, postTodo } from "../api/todos";
 

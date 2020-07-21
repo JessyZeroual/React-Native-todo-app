@@ -2,30 +2,29 @@ import React, { useContext } from "react";
 import { ActivityIndicator, View } from "react-native";
 
 import TodosContext from "../../context/TodosContext";
-
-import { Container } from "./Home.styled";
-import { ViewCenter } from "../../style/common.styled";
-
 import TodoList from "../TodoList/TodoList";
 import InputCreateItem from "../InputCreateItem/InputCreateItem";
+
+import { StyledContainer } from "./Home.styled";
+import { StyledViewCenter } from "../../style/common.styled";
 
 const Home = () => {
   const todosContext = useContext(TodosContext);
   const { isLoading } = todosContext.state;
 
   return (
-    <Container>
+    <StyledContainer>
       {isLoading ? (
-        <ViewCenter>
+        <StyledViewCenter>
           <ActivityIndicator size="large" />
-        </ViewCenter>
+        </StyledViewCenter>
       ) : (
         <View>
           <InputCreateItem />
           <TodoList />
         </View>
       )}
-    </Container>
+    </StyledContainer>
   );
 };
 

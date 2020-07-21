@@ -5,11 +5,7 @@ exports[`TodoList When TodoList is mounted renders correctly 1`] = `
   style={
     Array [
       Object {
-        "backgroundColor": "#ebebef",
-        "paddingBottom": 0,
-        "paddingLeft": 10,
-        "paddingRight": 10,
-        "paddingTop": 0,
+        "backgroundColor": "#fff",
         "width": "100%",
       },
     ]

@@ -1,7 +1,6 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import Icon from "react-native-vector-icons/AntDesign";
 
-import TodosContext from "../../context/TodosContext";
 import TodoDetailsSettings from "./TodoDetailsSettings";
 
 import Modal, {
@@ -10,31 +9,30 @@ import Modal, {
   ModalContent,
 } from "react-native-modals";
 import {
-  ImageWrapper,
-  Image,
-  Title,
-  WrapperHeader,
-  Header,
+  StyledImageWrapper,
+  StyledImage,
+  StyledTitle,
+  StyledWrapperHeader,
+  StyledHeader,
 } from "./TodoDetails.styled";
 
-const TodoDetailsHeader = ({ item }) => {
+const TodoDetailsHeader = ({ item, addImage }) => {
   const [isVisibleModal, setIsVisibleModal] = useState(false);
-  const todosContext = useContext(TodosContext);
-  const { addImage } = todosContext.dispatch;
+
   return (
     <>
-      <ImageWrapper>
-        <Image
+      <StyledImageWrapper>
+        <StyledImage
           source={{
             uri: item.imageUri
               ? item.imageUri
               : "https://cdn.iconscout.com/icon/free/png-512/react-1-282599.png",
           }}
         />
-      </ImageWrapper>
-      <WrapperHeader>
-        <Header>
-          <Title>{item.title}</Title>
+      </StyledImageWrapper>
+      <StyledWrapperHeader>
+        <StyledHeader>
+          <StyledTitle>{item.title}</StyledTitle>
           <Icon
             style={{ marginLeft: "auto" }}
             name="setting"
@@ -58,8 +56,8 @@ const TodoDetailsHeader = ({ item }) => {
               <TodoDetailsSettings item={item} addImage={addImage} />
             </ModalContent>
           </Modal>
-        </Header>
-      </WrapperHeader>
+        </StyledHeader>
+      </StyledWrapperHeader>
     </>
   );
 };

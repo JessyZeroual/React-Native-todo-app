@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
 import { secondaryColor } from "../../constant/style-constants";
 
-export const TodoItemWrapper = styled.TouchableOpacity`
+export const StyledTodoItemWrapper = styled.TouchableOpacity`
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -12,12 +12,12 @@ export const TodoItemWrapper = styled.TouchableOpacity`
   padding: 0px 20px;
 `;
 
-export const Title = styled.Text`
+export const StyledTitle = styled.Text`
   font-size: 16px;
   text-decoration: ${({ completed }) => completed && "line-through"};
 `;
 
-export const Image = styled.Image`
+export const StyledImage = styled.Image`
   border-radius: 10px;
   margin-left: auto;
   height: 50px;

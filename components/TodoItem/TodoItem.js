@@ -5,7 +5,7 @@ import TodosContext from "../../context/TodosContext";
 import CheckBox from "../../utils/CheckBox/CheckBox";
 import SwipeRow from "../../utils/SwipeRow";
 import truncateString from "../../utils/truncateString";
-import { TodoItemWrapper, Title, Image } from "./TodoItem.styled";
+import { StyledTodoItemWrapper, StyledTitle, StyledImage } from "./TodoItem.styled";
 
 const TodoItem = ({ item }) => {
   const todosContext = useContext(TodosContext);
@@ -24,7 +24,7 @@ const TodoItem = ({ item }) => {
       swipeThreshold={-150}
       onSwipe={() => _deleteTodo(item.id)}
     >
-      <TodoItemWrapper
+      <StyledTodoItemWrapper
         onPress={() => {
           navigation.navigate("TodoDetails", {
             item: item,
@@ -35,17 +35,17 @@ const TodoItem = ({ item }) => {
           completed={item.completed}
           onPressCheckBox={onPressCheckBox}
         />
-        <Title completed={item.completed}>
+        <StyledTitle completed={item.completed}>
           {truncateString(item.title, 20)}
-        </Title>
-        <Image
+        </StyledTitle>
+        <StyledImage
           source={{
             uri: item.imageUri
               ? item.imageUri
               : "https://cdn.iconscout.com/icon/free/png-512/react-1-282599.png",
           }}
         />
-      </TodoItemWrapper>
+      </StyledTodoItemWrapper>
     </SwipeRow>
   );
 };

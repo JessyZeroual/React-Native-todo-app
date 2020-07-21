@@ -1,17 +1,17 @@
 import styled from "styled-components/native";
 import { primaryColor, secondaryColor } from "../../constant/style-constants";
 
-export const InputCreateItemWrapper = styled.View`
+export const StyledInputCreateItemWrapper = styled.View`
   border-bottom-color: ${secondaryColor};
   border-bottom-width: 0.5px;
 `;
 
-export const Shape = styled.View`
+export const StyledShape = styled.View`
   background: ${primaryColor};
   padding: 10px;
 `;
 
-export const Form = styled.View`
+export const StyledForm = styled.View`
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -24,11 +24,11 @@ export const Form = styled.View`
   padding-right: 10px;
 `;
 
-export const Input = styled.TextInput`
+export const StyledInput = styled.TextInput`
   flex: 1;
 `;
 
-export const ButtonSubmit = styled.TouchableHighlight`
+export const StyledButtonSubmit = styled.TouchableHighlight`
   display: flex;
   justify-content: center;
   align-items: center;

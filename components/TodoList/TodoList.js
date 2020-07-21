@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { FlatList } from "react-native";
 import TodosContext from "../../context/TodosContext";
 import TodoItem from "../TodoItem/TodoItem";
-import { TodoListWrapper } from "./TodoList.styled";
+import { StyledTodoListWrapper } from "./TodoList.styled";
 
 const TodoList = () => {
   const todosContext = useContext(TodosContext);
@@ -10,7 +10,7 @@ const TodoList = () => {
   const { fetchTodos } = todosContext.dispatch;
 
   return (
-    <TodoListWrapper>
+    <StyledTodoListWrapper>
       <FlatList
         data={todos}
         renderItem={({ item }) => <TodoItem item={item} />}
@@ -18,7 +18,7 @@ const TodoList = () => {
         onEndReachedThreshold={0.5}
         onEndReached={() => fetchTodos({ needMoreTodos: true })}
       />
-    </TodoListWrapper>
+    </StyledTodoListWrapper>
   );
 };
 

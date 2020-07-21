@@ -8,6 +8,18 @@ jest.mock("../../../utils/truncateString");
 
 const _updateTodo = jest.fn();
 const _deleteTodo = jest.fn();
+const mockedNavigate = jest.fn();
+
+jest.mock("@react-navigation/native", () => {
+  return {
+    ...jest.requireActual("@react-navigation/native"),
+    useNavigation: () => ({
+      navigate: mockedNavigate,
+    }),
+  };
+});
+
+
 
 describe("TodoItem", () => {
   let renderer;

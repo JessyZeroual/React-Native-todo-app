@@ -1,10 +1,10 @@
 import React from "react";
-
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { primaryColor } from "../../constant/style-constants";
+
 import Home from "../Home/Home";
 import TodoDetails from "../TodoDetails/TodoDetails";
+import { primaryColor } from "../../constant/style-constants";
 
 const NavigationBar = () => {
   const { Navigator, Screen } = createStackNavigator();
