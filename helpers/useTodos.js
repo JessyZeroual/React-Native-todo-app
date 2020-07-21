@@ -58,7 +58,25 @@ const useTodos = () => {
     setTodos([...todos, data]);
   };
 
-  return { isLoading, todos, fetchTodos, _deleteTodo, _updateTodo, _postTodo };
+  const addImage = (todoId, uri) => {
+    const newTodos = todos.map((todo) => {
+      if (todo.id === todoId) {
+        todo.imageUri = uri;
+      }
+      return todo;
+    });
+    setTodos(newTodos);
+  };
+
+  return {
+    isLoading,
+    todos,
+    fetchTodos,
+    _deleteTodo,
+    _updateTodo,
+    _postTodo,
+    addImage,
+  };
 };
 
 export default useTodos;

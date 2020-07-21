@@ -9,18 +9,23 @@ import {
   Label,
 } from "./TodoDetails.styled";
 
-const users = {
+export const users = {
   1: {
     name: "Vinicius",
     avatarUrl:
       "https://gravatar.com/avatar/264ae05899a433e86369cefc21fd0189?s=400&d=robohash&r=x",
   },
+  2: {
+    name: "Ronaldo",
+    avatarUrl:
+      "https://gravatar.com/avatar/4c9cd49cb0bc35520a4b09015bf6cf75?s=400&d=robohash&r=x",
+  },
 };
 
-const TodoDetailsBody = ({ todo }) => (
+const TodoDetailsBody = ({ item }) => (
   <CardWrapper>
     <Label>Status:</Label>
-    {todo.completed ? (
+    {item.completed ? (
       <Card style={shadow}>
         <CardMedia>
           <Icon name="check" color="#5cb85c" size={25}></Icon>
@@ -40,12 +45,12 @@ const TodoDetailsBody = ({ todo }) => (
       <CardMedia>
         <Avatar
           source={{
-            uri: users[todo.userId].avatarUrl,
+            uri: users[item.userId].avatarUrl,
           }}
         />
       </CardMedia>
 
-      <CardTitle>{users[todo.userId].name}</CardTitle>
+      <CardTitle>{users[item.userId].name}</CardTitle>
     </Card>
   </CardWrapper>
 );

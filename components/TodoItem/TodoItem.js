@@ -27,7 +27,7 @@ const TodoItem = ({ item }) => {
       <TodoItemWrapper
         onPress={() => {
           navigation.navigate("TodoDetails", {
-            itemId: item.id,
+            item: item,
           });
         }}
       >
@@ -40,7 +40,9 @@ const TodoItem = ({ item }) => {
         </Title>
         <Image
           source={{
-            uri: "https://reactnative.dev/img/tiny_logo.png",
+            uri: item.imageUri
+              ? item.imageUri
+              : "https://cdn.iconscout.com/icon/free/png-512/react-1-282599.png",
           }}
         />
       </TodoItemWrapper>

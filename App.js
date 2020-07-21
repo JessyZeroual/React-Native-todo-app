@@ -15,6 +15,7 @@ const App = () => {
     _deleteTodo,
     _updateTodo,
     _postTodo,
+    addImage,
   } = useTodos();
 
   return (
@@ -22,7 +23,13 @@ const App = () => {
       <TodosContextProvider
         value={{
           state: { isLoading, todos },
-          dispatch: { fetchTodos, _deleteTodo, _updateTodo, _postTodo },
+          dispatch: {
+            fetchTodos,
+            _deleteTodo,
+            _updateTodo,
+            _postTodo,
+            addImage,
+          },
         }}
       >
         <NavigationBar />

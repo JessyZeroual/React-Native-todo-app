@@ -49,7 +49,7 @@ export const CardWrapper = styled.View`
   padding: 0px 20px;
 `;
 
-export const CardMedia = styled.TouchableOpacity`
+export const CardMedia = styled.View`
   width: 60px;
   height: 60px;
   display: flex;

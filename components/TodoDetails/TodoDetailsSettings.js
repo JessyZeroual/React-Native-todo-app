@@ -1,25 +1,33 @@
 import React from "react";
+import * as ImagePicker from "expo-image-picker";
 import Icon from "react-native-vector-icons/AntDesign";
+
 import { primaryColor } from "../../constant/style-constants";
+import { CardMedia, CardTitle, Card } from "./TodoDetails.styled";
 
-import {
-  SettingsWrapper,
-  CardWrapper,
-  CardMedia,
-  CardTitle,
-  Card,
-} from "./TodoDetails.styled";
+const TodoDetailsSettings = ({ item, addImage }) => {
 
-const TodoDetailsSettings = ({ todo }) => {
+  let openImagePickerAsync = async () => {
+    let permissionResult = await ImagePicker.requestCameraRollPermissionsAsync();
+
+    if (permissionResult.granted === false) {
+      alert("Permission to access camera roll is required!");
+      return;
+    }
+
+    let pickerResult = await ImagePicker.launchImageLibraryAsync();
+    if (pickerResult.cancelled === true) {
+      return;
+    }
+    addImage(item.id, pickerResult.uri);
+  };
+
   return (
-    <Card>
-      <CardMedia onPress={() => console.log("update image")}>
+    <Card onPress={openImagePickerAsync} style={shadow}>
+      <CardMedia>
         <Icon name="upload" color={primaryColor} size={25}></Icon>
       </CardMedia>
-
-      <CardTitle onPress={() => console.log("update image")}>
-        Edit image
-      </CardTitle>
+      <CardTitle>Edit image</CardTitle>
     </Card>
   );
 };
