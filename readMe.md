@@ -18,7 +18,7 @@ In the file `constant/config.example.js` :
 ### Start the server
 
 ```
-"json-server --host <IP_ADRESS> --watch db.json"
+json-server --host <IP_ADRESS> --watch db.json
 ```
 
 ### Start App
