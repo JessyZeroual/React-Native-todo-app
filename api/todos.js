@@ -1,6 +1,12 @@
 import { IP_ADRESS } from "../constant/config";
 const BASE_URL = `http://${IP_ADRESS}:3000`;
 
+export const getTodoById = (id) => {
+  return fetch(`${BASE_URL}/todos/${id}`)
+    .then((res) => res.json())
+    .then((data) => data);
+};
+
 export const getTodos = (start, LIMIT) => {
   return fetch(`${BASE_URL}/todos?_start=${start}&_limit=${LIMIT}`)
     .then((res) => res.json())

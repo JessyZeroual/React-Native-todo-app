@@ -1,5 +1,15 @@
 import styled from "styled-components/native";
-import { primaryColor } from "../../constant/style-constants";
+import { primaryColor, secondaryColor } from "../../constant/style-constants";
+
+export const InputCreateItemWrapper = styled.View`
+  border-bottom-color: ${secondaryColor};
+  border-bottom-width: 0.5px;
+`;
+
+export const Shape = styled.View`
+  background: ${primaryColor};
+  padding: 10px;
+`;
 
 export const Form = styled.View`
   display: flex;

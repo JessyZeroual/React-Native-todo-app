@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
 import { secondaryColor } from "../../constant/style-constants";
 
-export const TodoItemWrapper = styled.View`
+export const TodoItemWrapper = styled.TouchableOpacity`
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -17,7 +17,8 @@ export const Title = styled.Text`
   text-decoration: ${({ completed }) => completed && "line-through"};
 `;
 
-export const Logo = styled.Image`
+export const Image = styled.Image`
+  border-radius: 10px;
   margin-left: auto;
   height: 50px;
   width: 50px;
