@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputCreateItem When InputCreateItem is mounted renders correctly 1`] = `
+<View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#fff",
+          "borderBottomColor": "#ebebef",
+          "borderBottomWidth": 1.5,
+          "display": "flex",
+          "height": "100%",
+        },
+      ]
+    }
+  >
+    TodoDetailsBody
+    TodoDetailsHeader
+  </View>
+</View>
+`;
