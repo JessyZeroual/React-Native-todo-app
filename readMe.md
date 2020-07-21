@@ -27,8 +27,15 @@ In the file `constant/config.example.js` :
  yarn start
 ```
 
+### Run test
+
+```
+ yarn test
+```
+
 ## Docs
 
 - [React Native](https://reactnative.dev/docs/getting-started)
-- [styled-componentsReact for React Native](https://styled-components.com/docs/basics#react-native)
+- [react-test-renderer](https://fr.reactjs.org/docs/test-renderer.html)
+- [styled-components React for React Native](https://styled-components.com/docs/basics#react-native)
 - [json-server](https://github.com/typicode/json-server)

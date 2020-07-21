@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputCreateItem When InputCreateItem is mounted renders correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "borderBottomColor": "#ebebef",
+        "borderBottomWidth": 0.5,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#30bddd",
+          "paddingBottom": 10,
+          "paddingLeft": 10,
+          "paddingRight": 10,
+          "paddingTop": 10,
+        },
+      ]
+    }
+  />
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#fff",
+          "borderRadius": 40,
+          "display": "flex",
+          "flexDirection": "row",
+          "height": 40,
+          "marginBottom": 10,
+          "marginLeft": 20,
+          "marginRight": 20,
+          "marginTop": -20,
+          "paddingLeft": 20,
+          "paddingRight": 10,
+        },
+        Object {
+          "elevation": 3,
+          "shadowColor": "#000",
+          "shadowOffset": Object {
+            "height": 1,
+            "width": 0,
+          },
+          "shadowOpacity": 0.22,
+          "shadowRadius": 2.22,
+        },
+      ]
+    }
+  >
+    <TextInput
+      allowFontScaling={true}
+      onChangeText={[Function]}
+      onSubmitEditing={[Function]}
+      placeholder="Add item"
+      placeholderTextColor="grey"
+      rejectResponderTermination={true}
+      style={
+        Array [
+          Object {
+            "flexBasis": 0,
+            "flexGrow": 1,
+            "flexShrink": 1,
+          },
+        ]
+      }
+      underlineColorAndroid="transparent"
+      value=""
+    />
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#30bddd",
+            "borderRadius": 30,
+            "display": "flex",
+            "height": 30,
+            "justifyContent": "center",
+            "width": 30,
+          },
+        ]
+      }
+    >
+      <Text />
+    </View>
+  </View>
+</View>
+`;
