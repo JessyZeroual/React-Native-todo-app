@@ -1,5 +1,6 @@
 import React from "react";
 import Icon from "react-native-vector-icons/AntDesign";
+import { users } from "../../api/users";
 import {
   Avatar,
   CardWrapper,
@@ -8,19 +9,6 @@ import {
   Card,
   Label,
 } from "./TodoDetails.styled";
-
-export const users = {
-  1: {
-    name: "Vinicius",
-    avatarUrl:
-      "https://gravatar.com/avatar/264ae05899a433e86369cefc21fd0189?s=400&d=robohash&r=x",
-  },
-  2: {
-    name: "Ronaldo",
-    avatarUrl:
-      "https://gravatar.com/avatar/4c9cd49cb0bc35520a4b09015bf6cf75?s=400&d=robohash&r=x",
-  },
-};
 
 const TodoDetailsBody = ({ item }) => (
   <CardWrapper>

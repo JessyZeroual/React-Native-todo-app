@@ -8,15 +8,9 @@
     },
     {
       "userId": 1,
-      "title": "Item-5 ",
-      "completed": false,
-      "id": 5
-    },
-    {
-      "userId": 1,
       "title": "Item-6",
       "completed": false,
-      "id": 6
+      "id": 2
     }
   ]
 }

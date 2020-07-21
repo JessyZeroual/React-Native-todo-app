@@ -1,4 +1,5 @@
 import { IP_ADRESS } from "../constant/config";
+import { users } from "./users";
 const BASE_URL = `http://${IP_ADRESS}:3000`;
 
 export const getTodoById = (id) => {
@@ -44,7 +45,7 @@ export const postTodo = (title) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      userId: 1,
+      userId: Math.floor(Math.random() * Object.keys(users).length) + 1,
       title,
       completed: false,
     }),
