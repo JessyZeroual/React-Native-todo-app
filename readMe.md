@@ -6,7 +6,7 @@
 
 In the file `constant/config.example.js` :
 
-- Set up your `<IP_ADRESS>`
+- Set up your `<IP_ADDRESS>`
 - Rename the file `constant/config.example.js` with `config.js`
 
 ### Install dependencies
